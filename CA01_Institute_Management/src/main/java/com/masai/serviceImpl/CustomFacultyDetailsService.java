@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import com.masai.model.Faculty;
 import com.masai.repository.FacultyRepository;
 
-@Service
+//@Service
 public class CustomFacultyDetailsService implements UserDetailsService{
 	
 	@Autowired

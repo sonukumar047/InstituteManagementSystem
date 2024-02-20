@@ -24,14 +24,14 @@ public class CustomStudentDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+//		System.out.println("HII");
 		Optional<Student> opt = studentRepository.findByEmail(username);
-
 		if (opt.isEmpty())
 			throw new UsernameNotFoundException("User with" + username + "Not found");
 		else {
 			Student student = opt.get();
 			List<GrantedAuthority> authorities = new ArrayList<>();
-			authorities.add(new SimpleGrantedAuthority(null));
+			authorities.add(new SimpleGrantedAuthority("ROLE"));
 
 			return new User(student.getEmail(), student.getPassword(), authorities);
 		}

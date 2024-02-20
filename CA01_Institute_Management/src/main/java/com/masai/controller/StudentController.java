@@ -54,7 +54,7 @@ public class StudentController {
 	
 	@PostMapping("/login")
 	public ResponseEntity<?> login(Authentication authentication){
-		
+//		System.out.println("HIII");
 		return new ResponseEntity<>("Logged In Successfully as a student!", HttpStatus.ACCEPTED);
 	}
 
