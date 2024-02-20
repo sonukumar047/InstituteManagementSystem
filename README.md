@@ -1,4 +1,4 @@
-# Institute Management System Controllers
+# Institute Management System
 
 This repository contains the REST API controllers for the Institutel Management System, managing faculties, institutes, and students.
 
