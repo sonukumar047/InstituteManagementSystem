@@ -1,68 +1,67 @@
-# Institute Management System
+# Institute Management System API with Docker Support
 
-This repository contains the REST API controllers for the Institutel Management System, managing faculties, institutes, and students.
+This project implements a RESTful API for an Institute Management System using Java and Spring Boot. The API allows for the registration, modification, and retrieval of institute information. Additionally, it provides Docker support for easy deployment.
 
-## Technologies Used
+## Functional Requirements
 
-- Spring Boot
-- Java
-- JPA/Hibernate
-- Spring Data JPA
-- Spring Security 
+**Institute Registration:**
+- Endpoint for registering an institute with fields for name, location, contact information, and additional details.
+- Secure storage of institute data.
 
-## Controllers
+**Institute Modification:**
+- Endpoint for modifying institute information based on the institute's ID.
+- Allow changes to fields such as name, location, and contact information.
 
-### FacultyController
+**Institute Information Retrieval:**
+- Endpoint to retrieve information about a specific institute based on the institute's ID.
 
-This controller manages faculty members of the institute.
+**Docker Solution:**
+- Dockerize the Spring Boot application.
+- Provide a Dockerfile for building the Docker image.
+- Include necessary configuration for the Docker container.
 
-**Endpoints:**
+**Security Measures:**
+- Implement proper input validation.
+- Protect against common security threats
+- Use HTTPS to secure communication.
 
-- `/faculty/registerFaculty` (POST): Registers a new faculty member.
-- `/faculty/getAllFaculties` (GET): Retrieves all registered faculty members.
-- `/faculty/getFacultyById/{facultyId}` (GET): Retrieves a faculty member by ID.
-- `/faculty/updateFacultyById/{facultyId}` (PUT): Updates a faculty member's details.
-- `/faculty/deleteFacultyById/{facultyId}` (DELETE): Deletes a faculty member.
+## Technical Requirements
 
-**Authentication:**
+**Technology Stack:**
+- Java and Spring Boot for development.
+- MySQL for storing institute information.
 
-- Faculty login is supported (see `InstituteController` for details).
+**Docker Integration:**
+- Docker solution for the Spring Boot application.
+- Easy deployment using Docker.
 
-### InstituteController
+**Project Structure:**
+- Clean project structure with separation of concerns (e.g., controllers, services, repositories).
 
-This controller manages institutes in the system.
+**Testing:**
+- Unit tests for critical components using JUnit.
+- Integration tests for the API endpoints.
 
-**Endpoints:**
+**Documentation:**
+- Clear documentation for setting up and running the project.
+- Details on API endpoints, request/response formats, and Docker deployment.
 
-- `/institute/registerInstute` (POST): Registers a new institute.
-- `/institute/getAllInstitutes` (GET): Retrieves all registered institutes.
-- `/institute/getInstituteById/{instituteId}` (GET): Retrieves an institute by ID.
-- `/institute/updateInstituteById/{instituteId}` (PUT): Updates an institute's details.
-- `/institute/deleteInstituteById/{instituteId}` (DELETE): Deletes an institute.
+## Project Structure
 
-**Authentication:**
+The project is structured into three main components:
 
-- Institute login is supported (see `StudentController` for details).
+1. **Controllers:**
+   - `FacultyController`, `InstituteController`, and `StudentController` for handling API endpoints related to faculties, institutes, and students, respectively.
 
-### StudentController
+2. **Services:**
+   - `FacultyService`, `InstituteService`, and `StudentService` for implementing business logic.
 
-This controller manages students enrolled in the institute.
+3. **Models:**
+   - `Faculty`, `Institute`, and `Student` classes for defining the data structures.
 
-**Endpoints:**
+## Running the Application
 
-- `/student/registerStudent` (POST): Registers a new student.
-- `/student/getAllStudents` (GET): Retrieves all registered students.
-- `/student/getStudentById/{studentId}` (GET): Retrieves a student by ID.
-- `/student/updateStudent/{studentId}` (PUT): Updates a student's details.
-- `/student/deleteStudentById/{studentId}` (DELETE): Deletes a student.
-
-**Authentication:**
-
-- Student login is supported (see `FacultyController` and `InstituteController` for details on login implementation).
-
-## Important Notes
-
-- Replace placeholders (e.g., `{facultyId}`, `{instituteId}`, `{studentId}`) with actual values in API calls.
-- Ensure you have the necessary dependencies and configurations set up in your Spring Boot project.
-- Implement the `Authentication` class and login functionality according to your specific requirements.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/institute-management-system.git
 
